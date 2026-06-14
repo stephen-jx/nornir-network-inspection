@@ -1,0 +1,28 @@
+---
+# ============================================================
+# Global Defaults — applied to all devices unless overridden
+# ============================================================
+
+# Default credentials (use environment variables in production)
+username: "admin"
+password: ""
+
+# Default connection timeout (seconds)
+connection_options:
+  napalm:
+    extras:
+      timeout: 60
+      optional_args:
+        secret: ""       # enable password, if needed
+        global_delay_factor: 1
+  netmiko:
+    extras:
+      timeout: 60
+      global_delay_factor: 1
+      banner_timeout: 20
+      auth_timeout: 20
+
+# Default data fields
+data:
+  site: "Default"
+  role: "access"

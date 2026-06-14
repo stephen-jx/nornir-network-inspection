@@ -1,0 +1,23 @@
+# Nornir Framework
+nornir>=3.0.0
+nornir-napalm>=0.2.0
+nornir-netmiko>=0.3.0
+
+# Network Drivers
+napalm>=4.0.0
+napalm-huawei-vrp
+netmiko>=4.3.0
+
+# CLI Parsing
+textfsm>=1.1.0
+
+# Excel Report
+openpyxl>=3.1.0
+
+# Configuration
+pyyaml>=6.0
+
+# Logging (stdlib, listed for completeness)
+# logging (builtin)
+# pathlib (builtin)
+（内容由AI生成，仅供参考）

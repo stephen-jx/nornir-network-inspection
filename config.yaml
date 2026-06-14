@@ -1,0 +1,22 @@
+---
+# ============================================================
+# Nornir Configuration for Network Inspection
+# ============================================================
+
+inventory:
+  plugin: SimpleInventory
+  options:
+    host_file: "inventory/hosts.yaml"
+    group_file: "inventory/groups.yaml"
+    defaults_file: "inventory/defaults.yaml"
+
+runner:
+  plugin: threaded
+  options:
+    num_workers: 20     # Concurrent threads for device inspection
+
+logging:
+  enabled: true
+  level: INFO
+  file: "logs/nornir.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

@@ -1,0 +1,74 @@
+---
+# ============================================================
+# Device Inventory — Host List
+# ============================================================
+# Each key is a unique device name (used as Nornir host identifier).
+# Fields:
+#   hostname   : Management IP or FQDN (required)
+#   port       : SSH port (default: 22)
+#   groups     : List of group names (required, determines platform & credentials)
+#   username   : Per-device username override (optional, defaults to group/defaults)
+#   password   : Per-device password override (optional, defaults to group/defaults)
+#   data       : Custom key-value pairs for inspection logic
+#     role     : Device role (core / distribution / access / firewall)
+#     site     : Physical location / site name
+#     vendor   : Vendor name for display purposes (huawei / h3c)
+# ============================================================
+
+# --- Huawei Examples ---
+
+"huawei-core-01":
+  hostname: "10.1.1.1"
+  groups:
+    - huawei
+  data:
+    role: core
+    site: "北京数据中心-A区"
+    vendor: huawei
+
+"huawei-dist-01":
+  hostname: "10.1.2.1"
+  groups:
+    - huawei
+  data:
+    role: distribution
+    site: "北京数据中心-A区"
+    vendor: huawei
+
+"huawei-access-01":
+  hostname: "10.1.3.1"
+  groups:
+    - huawei
+  data:
+    role: access
+    site: "北京数据中心-B区"
+    vendor: huawei
+
+# --- H3C Examples ---
+
+"h3c-core-01":
+  hostname: "10.2.1.1"
+  groups:
+    - h3c
+  data:
+    role: core
+    site: "北京数据中心-A区"
+    vendor: h3c
+
+"h3c-dist-01":
+  hostname: "10.2.2.1"
+  groups:
+    - h3c
+  data:
+    role: distribution
+    site: "北京数据中心-A区"
+    vendor: h3c
+
+"h3c-access-01":
+  hostname: "10.2.3.1"
+  groups:
+    - h3c
+  data:
+    role: access
+    site: "北京数据中心-B区"
+    vendor: h3c

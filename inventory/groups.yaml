@@ -1,0 +1,36 @@
+---
+# ============================================================
+# Group Configuration — Platform & Connection Parameters
+# ============================================================
+
+# --- Huawei Group ---
+huawei:
+  platform: "huawei_vrp"            # NAPALM driver name
+  connection_options:
+    napalm:
+      extras:
+        optional_args:
+          secret: ""                # enable password if configured
+    netmiko:
+      extras:
+        device_type: "huawei"       # Netmiko device_type mapping
+        secret: ""                  # enable password if configured
+        fast_cli: false             # Set true for faster CLI (less reliable on busy devices)
+  data:
+    vendor: huawei
+
+# --- H3C Group ---
+h3c:
+  platform: "hp_comware"            # NAPALM driver name (H3C uses Comware driver)
+  connection_options:
+    napalm:
+      extras:
+        optional_args:
+          secret: ""                # enable password if configured
+    netmiko:
+      extras:
+        device_type: "hp_comware"   # Netmiko device_type mapping
+        secret: ""                  # enable password if configured
+        fast_cli: false
+  data:
+    vendor: h3c
